@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 600px;">
+                <div class="card-header"  style="background-color: #fff;">
+                    <h5> <span style="color: rgb(0, 106, 255);">Name: &nbsp;{{empObj.name}} </span> </h5>
+                </div>
+                <div class="card-body"  style="background-color: #fff;">
+                    <h6>{{"Mobile no: &nbsp;"+empObj.mobileno}} </h6>
+                    <h6 style="color: green;"> {{"EmailID:  &nbsp; "+empObj.emailid}} </h6>
+                    <h6> {{"CtreatedBy:  &nbsp; "+empObj.createdBy}} </h6>
+                    <h6> Create Date: &nbsp;{{empObj.createdDate |date}} </h6>
+                    <h6> {{"UpdateBy:  &nbsp;"+empObj.updatedBy}} </h6>
+                    <h6> Update Date:  &nbsp;{{empObj.updatedDate | date}} </h6>
+                    <h6> {{"Status: &nbsp;"+empObj.status}} </h6>
+                    <h6> {{"Department: &nbsp;"+empObj.department}} </h6>
+                    <h6> {{"Salary:  &nbsp;"+empObj.salary}} </h6>
+                    <h6> {{"Country: &nbsp;"+empObj.country.cname}} </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

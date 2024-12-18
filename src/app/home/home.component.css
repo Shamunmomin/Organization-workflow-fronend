@@ -1,0 +1,12 @@
+table{
+    text-align: center;
+}
+
+.form-control{
+    width: 700px;
+    margin-left: 14%;
+}
+
+.btn{
+    margin-left: 1rem;
+}

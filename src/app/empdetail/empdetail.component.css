@@ -1,0 +1,11 @@
+div .card-body{
+    background-color:#eee ;
+    color:black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div .card-header{
+    background-color: #eee;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

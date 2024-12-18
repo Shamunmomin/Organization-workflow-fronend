@@ -1,0 +1,56 @@
+
+
+<app-header></app-header>
+<br>
+
+<div class="container-fluid">
+    <button routerLink="/addemp" class="btn btn-success">Add Employee</button>
+    <button (click)="onUpdate()" class="btn btn-success">Update Employee</button>
+    <button (click)="onDelete()" class="btn btn-success">Delete Employe</button>
+</div>
+ <br>
+<div class="container">
+    <input type="text" [(ngModel)]="filtername" placeholder="Search employee" class="form-control">
+</div>
+<br>
+<div class="container-fluid">
+
+    <table class="table table-bordered table-hover" style="background-color: #fff; border-radius: 8px;">
+        <thead>
+            <tr>
+                <th>Sr.no</th>
+                <th>Action</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Department</th>
+                <th>Created By</th>
+                <th> Created Date</th>
+                <th>Updated Date</th>
+                <th>Salary</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of empData | filterpipe : filtername ;index as i">
+                <td> {{i+1}} </td>
+                <td> <input (click)="onRadioButton(item.id)" type="radio" name="record"> </td>
+                <td><span style="cursor: pointer; color: blue;" [routerLink]="['empDetail',item.id]">{{item.name}}</span></td>
+                <td> <h4><span
+                 [ngClass]="{
+                    'badge':true,
+                    'bg-primary':item.status.toLowerCase()=='active',
+                    'bg-warning':item.status.toLowerCase()=='inactive',
+                    'bg-danger':item.status.toLowerCase()=='suspend',
+                    
+                 }"  > {{item.status}} </span></h4>  </td>
+                <td> {{item.department}} </td>
+                <td> {{item.createdBy}} </td>
+                <td> {{item.createdDate | date:'dd-mm-yyyy'}} </td>
+                <td> {{item.updatedDate | date:'dd-mm-yyyy'}} </td>
+                <td> {{item.salary}} </td>
+                <td> {{item.country.cname}} </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
